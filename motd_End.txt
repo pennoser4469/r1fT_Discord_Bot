@@ -1,0 +1,3 @@
+*Please type* `/request` *in #chat to get @temp_membership*
+*You can get a invite link by typing* `/link` *in #chat or by sending someone to '__http://www.discord.me/r1ft__'*
+*Type* `/help` *in #chat to get a list of bot commands*

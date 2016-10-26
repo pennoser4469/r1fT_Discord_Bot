@@ -1,0 +1,8 @@
+Help
+-----------------------------------------------------------------
+/request : Gain Tempory Membership.
+/link : Instant Invite Link.
+/join : Bot Joins Current Voice Channel.
+/play <media url> : Play Media URL.
+/skip : Vote to skip a song. The song requester can automatically skip.
+/playing : Shows info on currently playing song.

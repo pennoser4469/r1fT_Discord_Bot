@@ -1,0 +1,11 @@
+-----------------------------------------------------------------
+Admin Help
+-----------------------------------------------------------------
+/addmember <member name> : Add User to Member role.
+/kick <member name> : Kick a User from Server.
+/motd <message> : Updates #motd.
+/motdclear : Clears the #motd
+/pin <message> : Pin a message to current channel.
+/purge <number of messages> : Purge number of messages from channel.
+/stop : Stop playing music.
+/volume <0-100> : Sets the Volume of Bot
