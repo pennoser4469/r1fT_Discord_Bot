@@ -154,7 +154,7 @@ class Music:
 				rolepermission = 1
 			elif r is discord.utils.get(ctx.message.server.roles, name="@owner"):
 				rolepermission = 1
-		if rolepermission is 1:	
+		if rolepermission is 1:
 			if state.is_playing():
 				player = state.player
 				player.volume = value / 100
@@ -170,13 +170,13 @@ class Music:
 		"""
 		server = ctx.message.server
 		state = self.get_voice_state(server)
-		
+
 		for r in ctx.message.author.roles:
 			if r is discord.utils.get(ctx.message.server.roles, name="@admin"):
 				rolepermission = 1
 			elif r is discord.utils.get(ctx.message.server.roles, name="@owner"):
 				rolepermission = 1
-		if rolepermission is 1:	
+		if rolepermission is 1:
 
 			if state.is_playing():
 				player = state.player
@@ -298,8 +298,8 @@ async def help(ctx, member: discord.Member = None):
 	botlog = member.display_name + ' : Requested Help'
 	print(botlog)
 	await bot.delete_message(commandmsg)
-	
-	
+
+
 @bot.command(pass_context=True)
 async def request(ctx, member: discord.Member = None):
 	commandmsg = ctx.message
@@ -314,7 +314,7 @@ async def request(ctx, member: discord.Member = None):
 	botlog = member.display_name + ' : Requested Temp Membership'
 	print(botlog)
 	await bot.delete_message(commandmsg)
-	
+
 @bot.command(pass_context=True)
 async def link(ctx, member: discord.Member = None):
 	commandmsg = ctx.message
@@ -328,7 +328,7 @@ async def link(ctx, member: discord.Member = None):
 	botlog = commandmsg.author.display_name + ' : Requested Invite Link'
 	print(botlog)
 	await bot.delete_message(commandmsg)
-	
+
 @bot.command(pass_context=True)
 async def addmember(ctx, member: discord.Member = None):
 	commandmsg = ctx.message
@@ -342,7 +342,7 @@ async def addmember(ctx, member: discord.Member = None):
 			rolepermission = 1
 		elif r is discord.utils.get(commandmsg.server.roles, name="@owner"):
 			rolepermission = 1
-	if rolepermission is 1:	
+	if rolepermission is 1:
 		addedmember = commandmsg.server.get_member_named(addedmemberstr)
 		await bot.add_roles(addedmember, memberrole)
 		msg = 'You have been added to @member'
@@ -356,7 +356,7 @@ async def addmember(ctx, member: discord.Member = None):
 		msg = 'You do not have permission to perform this command'
 		await bot.send_message(commandmsg.author, msg)
 		await bot.delete_message(commandmsg)
-		
+
 @bot.command(pass_context=True)
 async def kick(ctx, member: discord.Member = None):
 	commandmsg = ctx.message
@@ -374,7 +374,7 @@ async def kick(ctx, member: discord.Member = None):
 			rolepermission = 0
 		elif r is discord.utils.get(commandmsg.server.roles, name="@owner"):
 			rolepermission = 0
-	if rolepermission is 1:	
+	if rolepermission is 1:
 		kickedmember = commandmsg.server.get_member_named(kickedmemberstr)
 		msg = 'You were kicked from the server \n have a nice day'
 		await bot.send_message(kickedmember, msg)
@@ -399,7 +399,7 @@ async def motd(ctx):
 			rolepermission = 1
 		elif r is discord.utils.get(commandmsg.server.roles, name="@owner"):
 			rolepermission = 1
-	if rolepermission is 1:	
+	if rolepermission is 1:
 		motdchannel = discord.utils.get(commandmsg.server.channels, name="motd")
 		await bot.purge_from(motdchannel)
 		with open('motd.txt', 'a') as motdfile:
@@ -423,7 +423,7 @@ async def motd(ctx):
 		msg = 'You do not have permission to perform this command'
 		await bot.send_message(commandmsg.author, msg)
 		await bot.delete_message(commandmsg)
-		
+
 @bot.command(pass_context=True)
 async def motdclear(ctx):
 	commandmsg = ctx.message
@@ -433,7 +433,7 @@ async def motdclear(ctx):
 			rolepermission = 1
 		elif r is discord.utils.get(commandmsg.server.roles, name="@owner"):
 			rolepermission = 1
-	if rolepermission is 1:	
+	if rolepermission is 1:
 		motdchannel = discord.utils.get(commandmsg.server.channels, name="motd")
 		await bot.purge_from(motdchannel)
 		from shutil import copyfile
